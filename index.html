@@ -33,9 +33,31 @@
       'use strict';
 
       {
+        // querySelectorAll戻り値はNodeList
+        const menuItems = document.querySelectorAll('.menu li a');
+        const contents = document.querySelectorAll('.content');
 
+        menuItems.forEach(clickedItem => {
+          clickedItem.addEventListener('click', e => {
+            // クリック時にアンカータグの発火を防止する
+            e.preventDefault();
+            // 全てのliからactiveクラスを取り除く
+            menuItems.forEach(item => {
+              item.classList.remove('active');
+            });
+            // 選択肢したliにactiveクラスをつける
+            clickedItem.classList.add('active');
+
+            // contentからactiveクラスを取り除く
+            contents.forEach(content => {
+              content.classList.remove('active');
+            });
+            // 選択したcontentにactiveクラスをつける
+            document.getElementById(clickedItem.dataset.id).classList.add('active');
+          });
+        });
       }
-
+      
     </script>
   </body>
 </html>
