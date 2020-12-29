@@ -1,6 +1,7 @@
-javascript練習  
-Tab Menuの作り方を勉強  
+javascriptで作る  Tab Menu  
 
 ★キーワード  
 カスタム属性  
 NodeList  
+
+拡張性あり
